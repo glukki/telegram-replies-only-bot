@@ -23,5 +23,5 @@ removeChatNonRepliesMiddleware
     return CHAT_IDS.has(String(ctx.message.chat.id))
   })
   .filter((ctx) => isGroupChat(ctx.chat))
-  .filter((ctx) => !ctx.message.reply_to_message)
+  .filter((ctx) => !ctx.message.reply_to_message && !ctx.message.is_automatic_forward)
   .use((ctx) => ctx.deleteMessage())
