@@ -1,0 +1,24 @@
+name = "telegram-message-forward-bot"
+type = "javascript"
+account_id = ""
+workers_dev = true
+compatibility_date = "2021-09-27"
+
+[[kv_namespaces]]
+binding = "LOGS"
+id = ""
+preview_id = ""
+
+[vars]
+HOOK_PATH = "/hook"
+TELEGRAM_API_TOKEN = ""
+ALLOWED_CHAT_IDS=""
+
+[dev]
+port = 8080
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "modules"
+main = "./index.mjs"
