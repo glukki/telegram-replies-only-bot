@@ -4,4 +4,4 @@ import { removeChatNonRepliesMiddleware } from './removeChatNonReplies'
 
 export { UPDATES } from './_events'
 
-export const middlewares = [helpMiddleware, whereAmIMiddleware, removeChatNonRepliesMiddleware]
+export const middlewares = [removeChatNonRepliesMiddleware, helpMiddleware, whereAmIMiddleware]
