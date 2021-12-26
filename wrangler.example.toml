@@ -6,13 +6,12 @@ compatibility_date = "2021-12-26"
 
 [[kv_namespaces]]
 binding = "LOGS"
-id = ""
-preview_id = ""
+id = "%%LOGS%%"
 
 [vars]
-HOOK_PATH = "/hook"
-TELEGRAM_API_TOKEN = ""
-ALLOWED_CHAT_IDS=""
+HOOK_PATH = "%%HOOK_PATH%%"
+TELEGRAM_API_TOKEN = "%%TELEGRAM_API_TOKEN%%"
+ALLOWED_CHAT_IDS = ""
 
 [dev]
 port = 8080

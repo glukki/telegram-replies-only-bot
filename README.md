@@ -6,7 +6,7 @@ This bot will remove chat messages that are not replies.
 
 Make a `wrangler.toml` file from the `wrangler.example.toml` template, and define variables:
 
-- `HOOK_PATH` - webhook path, that Telegram server will call
+- `HOOK_PATH` - webhook path, that Telegram server will call, like `/hook`
 - `TELEGRAM_API_TOKEN` - Telegram Bot API token
 - `ALLOWED_CHAT_IDS` - Comma-separated list of chat IDs to moderate, like `1,2,3`
 
