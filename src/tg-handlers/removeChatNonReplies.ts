@@ -24,11 +24,4 @@ removeChatNonRepliesMiddleware
   })
   .filter((ctx) => isGroupChat(ctx.chat))
   .filter((ctx) => !ctx.message.reply_to_message)
-  .use(async (ctx) => {
-    const result = await ctx.deleteMessage()
-
-    console.log(result) // TODO: remove
-    if (result) {
-      return ctx.reply('Missing `can_delete_messages` admin permission')
-    }
-  })
+  .use((ctx) => ctx.deleteMessage())
