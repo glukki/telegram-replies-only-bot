@@ -16,8 +16,6 @@ ALLOWED_CHAT_IDS = ""
 [dev]
 port = 8080
 
-[build]
-command = "npm install && npm run build"
 [build.upload]
 format = "modules"
 main = "./index.mjs"
