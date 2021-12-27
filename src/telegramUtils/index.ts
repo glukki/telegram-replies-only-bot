@@ -1,5 +1,6 @@
 import { Context, FrameworkAdapter, MiddlewareFn } from 'grammy'
 import { Chat } from '@grammyjs/types'
+import IPCIDR from 'ip-cidr'
 import { Env } from '../bindings'
 
 export type CloudflareModuleAdapterType = (
@@ -47,6 +48,11 @@ export const workerContext = <E, C extends Context = Context>(
 
     return next()
   }
+}
+
+const telegramCidrCheckers = ['149.154.160.0/20', '91.108.4.0/22'].map((cidr) => new IPCIDR(cidr))
+export const isTelegramServerIp = (ip: string) => {
+  return telegramCidrCheckers.some((checker) => checker.contains(ip))
 }
 
 export const isGroupChat = (chat: Chat): chat is Chat.GroupChat | Chat.SupergroupChat => {
