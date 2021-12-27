@@ -22,7 +22,7 @@ export const status: Handler = async (url, request, env, ctx) => {
 
   const info = await getBot(env, ctx).api.getWebhookInfo()
 
-  return new Response(JSON.stringify(info), {
+  return new Response(info.url?.length ? 'OK' : 'FAIL', {
     headers: {
       'content-type': 'application/json',
     },
