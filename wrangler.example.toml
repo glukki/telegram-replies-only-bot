@@ -8,10 +8,13 @@ compatibility_date = "2021-12-26"
 binding = "LOGS"
 id = "%%LOGS%%"
 
+[[kv_namespaces]]
+binding = "SETTINGS"
+id = "%%SETTINGS%%"
+
 [vars]
 HOOK_PATH = "%%HOOK_PATH%%"
 TELEGRAM_API_TOKEN = "%%TELEGRAM_API_TOKEN%%"
-ALLOWED_CHAT_IDS = ""
 
 [dev]
 port = 8080

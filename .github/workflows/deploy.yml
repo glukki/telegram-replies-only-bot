@@ -18,6 +18,7 @@ jobs:
           _output-file: 'wrangler.toml'
           _format-key: '%%key%%'
           LOGS: ${{ secrets.LOGS }}
+          SETTINGS: ${{ secrets.SETTINGS }}
           HOOK_PATH: ${{ secrets.HOOK_PATH }}
           TELEGRAM_API_TOKEN: ${{ secrets.TELEGRAM_API_TOKEN }}
 

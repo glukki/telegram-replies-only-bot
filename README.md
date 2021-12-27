@@ -4,11 +4,14 @@ This bot will remove chat messages that are not replies.
 
 ### Setup
 
-Make a `wrangler.toml` file from the `wrangler.example.toml` template, and define variables:
+Copy `wrangler.example.toml` template into `wrangler.toml` and replace placeholders:
 
-- `HOOK_PATH` - webhook path, that Telegram server will call, like `/hook`
-- `TELEGRAM_API_TOKEN` - Telegram Bot API token
-- `ALLOWED_CHAT_IDS` - Comma-separated list of chat IDs to moderate, like `1,2,3`
+- `%%LOGS%%` - an id of KV to store error logs to
+- `%%SETTINGS%%` - an id of KV to read settings from
+- `%%HOOK_PATH%%` - a secret webhook path, that Telegram server will call, in `/hook` format
+- `%%TELEGRAM_API_TOKEN%%` - Telegram Bot API token
+
+In the `%%SETTINGS%%` KV on Cloudflare define the `allowed-chats` key with a list of comma-separated chat IDs
 
 ### Build
 

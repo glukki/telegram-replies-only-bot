@@ -7,20 +7,22 @@ registerUpdatesSubscription('message')
 
 export const removeChatNonRepliesMiddleware = new Composer<BotContext>()
 
-let CHAT_IDS: Set<string>
+const SETTING_ALLOWED_CHATS = 'allowed-chats'
+let ALLOWED_CHATS: Set<string>
 
 removeChatNonRepliesMiddleware
   .on('message')
-  .filter((ctx) => {
-    if (!CHAT_IDS) {
-      CHAT_IDS = new Set(
-        ctx.worker.env.ALLOWED_CHAT_IDS.split(',')
+  .filter(async (ctx) => {
+    if (!ALLOWED_CHATS) {
+      ALLOWED_CHATS = new Set(
+        ((await ctx.worker.env.SETTINGS.get(SETTING_ALLOWED_CHATS)) ?? '')
+          .split(',')
           .filter(Boolean)
           .map((id) => id.trim()),
       )
     }
 
-    return CHAT_IDS.has(String(ctx.message.chat.id))
+    return ALLOWED_CHATS.has(String(ctx.message.chat.id))
   })
   .filter((ctx) => isGroupChat(ctx.chat))
   .filter((ctx) => !ctx.message.reply_to_message && !ctx.message.is_automatic_forward)
