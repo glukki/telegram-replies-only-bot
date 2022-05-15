@@ -19,7 +19,7 @@
     ]
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.3.0",
+    "@cloudflare/workers-types": "3.10.0",
     "@cloudflare/wrangler": "1.19.6",
     "@grammyjs/types": "2.4.5",
     "@rollup/plugin-commonjs": "21.0.1",
