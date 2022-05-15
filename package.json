@@ -40,7 +40,7 @@
     "typescript": "4.5.4"
   },
   "dependencies": {
-    "grammy": "1.5.4",
+    "grammy": "1.8.3",
     "ip-cidr": "3.0.4"
   }
 }
