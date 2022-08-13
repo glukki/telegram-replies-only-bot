@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Telegram bot to remove chat messages that are not replies",
   "module": "./dist/index.mjs",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "build": "rollup -c",
     "format": "prettier --write  '*.{json,js,md}' 'src/**/*.{js,ts}'",
@@ -30,7 +33,7 @@
     "eslint": "8.5.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-typescript": "3.0.0",
-    "husky": "7.0.4",
+    "husky": "^8.0.1",
     "import-http": "0.3.1",
     "prettier": "2.5.1",
     "rollup": "2.62.0",
