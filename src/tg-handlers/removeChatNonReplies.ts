@@ -7,7 +7,6 @@ registerUpdatesSubscription('message')
 
 export const removeChatNonRepliesMiddleware = new Composer<BotContext>()
 
-const SETTING_ALLOWED_CHATS = 'allowed-chats'
 let ALLOWED_CHATS: Set<string>
 
 removeChatNonRepliesMiddleware
@@ -15,7 +14,7 @@ removeChatNonRepliesMiddleware
   .filter(async (ctx) => {
     if (!ALLOWED_CHATS) {
       ALLOWED_CHATS = new Set(
-        ((await ctx.worker.env.SETTINGS.get(SETTING_ALLOWED_CHATS)) ?? '')
+        ((await ctx.worker.env.SETTINGS.get('allowed-chats')) ?? '')
           .split(',')
           .filter(Boolean)
           .map((id) => id.trim()),

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import * as fs from 'fs'
 import { defineConfig } from 'rollup'
 import { terser } from 'rollup-plugin-terser'
