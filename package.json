@@ -22,8 +22,8 @@
     ]
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.3.0",
-    "@cloudflare/wrangler": "1.19.6",
+    "@cloudflare/workers-types": "^3.14.1",
+    "@cloudflare/wrangler": "^1.19.12",
     "@grammyjs/types": "2.4.5",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
