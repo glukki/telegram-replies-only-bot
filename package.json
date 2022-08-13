@@ -24,7 +24,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.1",
     "@cloudflare/wrangler": "^1.19.12",
-    "@grammyjs/types": "2.4.5",
+    "@grammyjs/types": "^2.8.2",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
@@ -43,7 +43,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "grammy": "1.5.4",
+    "grammy": "1.10.1",
     "ip-cidr": "^3.0.10"
   }
 }
