@@ -2,9 +2,11 @@
 
 This bot will remove chat messages that are not replies.
 
+Useful for when you have an open chat for channel comments, but want to keep conversations attached to posts.
+
 ### Setup
 
-Copy `wrangler.example.toml` template into `wrangler.toml` and replace placeholders:
+Make the `wrangler.toml` file out of `wrangler.example.toml` template, and replace placeholders:
 
 - `%%LOGS%%` - an id of KV to store error logs to
 - `%%SETTINGS%%` - an id of KV to read settings from
@@ -15,12 +17,12 @@ In the `%%SETTINGS%%` KV on Cloudflare define the `allowed-chats` key with a lis
 
 ### Build
 
-Run `npm run-script build`
+Run `npm run build`
 
 ### Development
 
-Run `wrangler dev`
+Run `npm run dev`
 
 ### Deployment
 
-Run `wrangler publish`
+Run `npm run deploy`
