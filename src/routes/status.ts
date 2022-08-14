@@ -21,10 +21,14 @@ export const status: Handler = async (url, request, env, ctx) => {
   }
 
   const info = await getBot(env, ctx).api.getWebhookInfo()
+  const isHookInstalled = !!info.url?.length
 
-  return new Response(info.url?.length ? 'OK' : 'FAIL', {
-    headers: {
-      'content-type': 'application/json',
-    },
-  })
+  if (!isHookInstalled) {
+    return new Response('Webhook install failed', {
+      status: 503,
+      headers: { 'content-type': 'text/plain; charset=utf-8' },
+    })
+  }
+
+  return new Response('OK', { headers: { 'content-type': 'text/plain; charset=utf-8' } })
 }
