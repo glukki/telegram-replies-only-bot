@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier --write  '*.{json,js,md}' 'src/**/*.{js,ts}'",
-    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js,md}' 'src/**/*.{js,ts}'",
+    "format": "prettier --write  '*.{json,js,ts,md}' 'src/**/*.{js,ts}'",
+    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js,ts,md}' 'src/**/*.{js,ts}'",
     "prepare": "husky install"
   },
   "author": "author",
