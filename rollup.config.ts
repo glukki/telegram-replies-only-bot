@@ -9,7 +9,7 @@ import typescript from '@rollup/plugin-typescript'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import importHttp from 'import-http/rollup'
-import replace from 'rollup-plugin-replace'
+import replace from '@rollup/plugin-replace'
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
 const grammyVersion = packageJson.dependencies.grammy
@@ -24,7 +24,8 @@ export default defineConfig({
   },
   plugins: [
     replace({
-      exclude: 'node_modules/**',
+      include: 'src/**',
+      preventAssignment: true,
       values: {
         grammy: `https://get.grammy.dev/es6@v${grammyVersion}.js`,
       },
