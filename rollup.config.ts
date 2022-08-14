@@ -35,6 +35,8 @@ export default defineConfig({
       preventAssignment: true,
       values: {
         'typeof Deno': '"undefined"',
+        'Deno === null': 'true',
+        'typeof window': '"undefined"',
       },
     }),
     importHttp(),
