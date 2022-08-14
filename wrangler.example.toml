@@ -2,7 +2,7 @@ name = "telegram-replies-only-bot"
 type = "javascript"
 account_id = ""
 workers_dev = true
-compatibility_date = "2021-12-26"
+compatibility_date = "2022-06-24"
 
 [[kv_namespaces]]
 binding = "LOGS"

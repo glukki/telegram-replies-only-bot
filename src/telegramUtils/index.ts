@@ -22,7 +22,7 @@ export const webhookAdapter: CloudflareModuleAdapterType = (url, request) => {
     update: request.json(),
     end: () => resolveHandler(new Response()),
     unauthorized: () => resolveHandler(new Response(null, { status: 401, statusText: 'secret token is wrong' })),
-    respond: (json: string) => resolveHandler(new Response(json, { headers: { 'content-type': 'application/json' } })),
+    respond: (json: string) => resolveHandler(Response.json(json)),
   }
 }
 
