@@ -1,24 +1,24 @@
 name = "telegram-replies-only-bot"
-type = "javascript"
-account_id = ""
 workers_dev = true
-compatibility_date = "2021-12-26"
+usage_model = "bundled"
+compatibility_date = "2022-06-24"
 
-[[kv_namespaces]]
-binding = "LOGS"
-id = "%%LOGS%%"
+main = "./dist/index.mjs"
+minify = true
 
-[[kv_namespaces]]
-binding = "SETTINGS"
-id = "%%SETTINGS%%"
+[dev]
+port = 8080
 
 [vars]
 HOOK_PATH = "%%HOOK_PATH%%"
 TELEGRAM_API_TOKEN = "%%TELEGRAM_API_TOKEN%%"
 
-[dev]
-port = 8080
+[[kv_namespaces]]
+binding = "LOGS"
+id = "%%LOGS%%"
+preview_id = ""
 
-[build.upload]
-format = "modules"
-main = "./index.mjs"
+[[kv_namespaces]]
+binding = "SETTINGS"
+id = "%%SETTINGS%%"
+preview_id = ""

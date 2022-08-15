@@ -30,6 +30,15 @@ export default defineConfig({
         grammy: `https://get.grammy.dev/es6@v${grammyVersion}.js`,
       },
     }),
+    replace({
+      exclude: 'src/**',
+      preventAssignment: true,
+      values: {
+        'typeof Deno': '"undefined"',
+        'Deno === null': 'true',
+        'typeof window': '"undefined"',
+      },
+    }),
     importHttp(),
     typescript(),
     commonjs(),
