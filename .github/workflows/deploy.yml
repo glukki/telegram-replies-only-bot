@@ -39,15 +39,15 @@ jobs:
       - name: Deploy
         id: deploy
         uses: cloudflare/wrangler-action@v3
+        env:
+          HOOK_PATH: ${{ secrets.HOOK_PATH }}
+          TELEGRAM_API_TOKEN: ${{ secrets.TELEGRAM_API_TOKEN }}
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           secrets: |
             HOOK_PATH
             TELEGRAM_API_TOKEN
-          env:
-            HOOK_PATH: ${{ secrets.HOOK_PATH }}
-            TELEGRAM_API_TOKEN: ${{ secrets.TELEGRAM_API_TOKEN }}
           command: deploy
 
       - name: Check status
