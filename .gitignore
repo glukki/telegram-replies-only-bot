@@ -1,5 +1,6 @@
-dist
-node_modules
-transpiled
+/dist
+/node_modules
+/transpiled
 /.idea/
-wrangler.toml
+/wrangler.toml
+/.dev.vars

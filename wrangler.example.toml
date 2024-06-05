@@ -1,6 +1,5 @@
 name = "telegram-replies-only-bot"
 workers_dev = true
-usage_model = "bundled"
 compatibility_date = "2022-06-24"
 
 main = "./dist/index.mjs"
@@ -10,8 +9,6 @@ minify = true
 port = 8080
 
 [vars]
-HOOK_PATH = "%%HOOK_PATH%%"
-TELEGRAM_API_TOKEN = "%%TELEGRAM_API_TOKEN%%"
 
 [[kv_namespaces]]
 binding = "LOGS"
