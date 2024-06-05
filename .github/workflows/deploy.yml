@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        persist-credentials: false
+        with:
+          persist-credentials: false
 
       - name: Create wrangler.toml
         uses: bluwy/substitute-string-action@v1
