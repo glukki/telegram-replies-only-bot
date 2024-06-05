@@ -46,7 +46,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           command: --version
           postCommands: |
-            text="$(wrangler deploy)"
+            text="$(npx wrangler deploy)"
             echo "value=${text##*$'\n'}" >> $GITHUB_OUTPUT
 
       - name: Check status
