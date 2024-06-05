@@ -10,8 +10,6 @@ minify = true
 port = 8080
 
 [vars]
-HOOK_PATH = "%%HOOK_PATH%%"
-TELEGRAM_API_TOKEN = "%%TELEGRAM_API_TOKEN%%"
 
 [[kv_namespaces]]
 binding = "LOGS"

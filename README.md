@@ -10,10 +10,13 @@ Make the `wrangler.toml` file out of `wrangler.example.toml` template, and repla
 
 - `%%LOGS%%` - an id of KV to store error logs to
 - `%%SETTINGS%%` - an id of KV to read settings from
-- `%%HOOK_PATH%%` - a secret webhook path, that Telegram server will call, in `/hook` format
-- `%%TELEGRAM_API_TOKEN%%` - Telegram Bot API token
 
 In the `%%SETTINGS%%` KV on Cloudflare define the `allowed-chats` key with a list of comma-separated chat IDs
+
+Make the `.dev.vars` file out of `.dev.example.vars` template, and replace placeholders:
+
+- `%%HOOK_PATH%%` - a secret webhook path, that Telegram server will call, in `/hook` format
+- `%%TELEGRAM_API_TOKEN%%` - Telegram Bot API token
 
 ### Build
 
@@ -26,3 +29,8 @@ Run `npm run dev`
 ### Deployment
 
 Run `npm run deploy`
+
+Set up secrets:
+
+- `npx wrangler secret put HOOK_PATH`
+- `npx wrangler secret put TELEGRAM_API_TOKEN`
