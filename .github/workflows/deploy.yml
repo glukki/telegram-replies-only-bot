@@ -40,14 +40,14 @@ jobs:
 
       - name: Deploy
         id: deploy
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           command: --version
           postCommands: |
-            text="$(wrangler publish)"
-            echo "::set-output name=value::${text##*$'\n'}"
+            text="$(wrangler deploy)"
+            echo "value=${text##*$'\n'}" >> $GITHUB_OUTPUT
 
       - name: Check status
         uses: srt32/uptime@master
