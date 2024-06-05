@@ -16,7 +16,7 @@ jobs:
           persist-credentials: false
 
       - name: Create wrangler.toml
-        uses: bluwy/substitute-string-action@v1
+        uses: bluwy/substitute-string-action@v3
         with:
           _input-file: 'wrangler.example.toml'
           _output-file: 'wrangler.toml'
