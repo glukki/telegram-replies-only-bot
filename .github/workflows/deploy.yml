@@ -48,7 +48,7 @@ jobs:
           postCommands: |
             output="$(npx wrangler deploy)"
             echo "$output"
-            url=$(echo "$output" | grep 'https' | tail -n1)
+            url=$(echo "$output" | grep -Ei '^\s*?https' | tail -n1)
             echo "url=$url" >> $GITHUB_OUTPUT
 
       - name: Check status
